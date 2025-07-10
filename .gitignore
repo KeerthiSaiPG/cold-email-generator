@@ -1,0 +1,19 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# Environment and credentials
+.env
+*.env
+
+# Jupyter notebook checkpoints
+*.ipynb_checkpoints
+
+# Local databases
+vectorstore/
+*.sqlite3
+
+# OS-specific files
+.DS_Store
+Thumbs.db
