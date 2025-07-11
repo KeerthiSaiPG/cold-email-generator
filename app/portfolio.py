@@ -18,4 +18,13 @@ class Portfolio:
                                     ids=[str(uuid.uuid4())])
 
     def query_links(self, skills):
-        return self.collection.query(query_texts=skills, n_results=2).get('metadatas', [])
+        results = self.collection.query(query_texts=skills, n_results=2)
+        formatted_links = []
+        
+        if results.get('metadatas'):
+            for metadatas in results['metadatas']:
+                for meta in metadatas:  # Handle nested structure
+                    if 'links' in meta:
+                        formatted_links.append(meta['links'])
+        
+        return "\n".join([f"- {link}" for link in formatted_links]) if formatted_links else "No relevant links found"

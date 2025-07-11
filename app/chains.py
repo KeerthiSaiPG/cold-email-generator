@@ -61,20 +61,33 @@ class Chain:
     def write_mail(self,job,links):
         prompt_email = PromptTemplate.from_template(
             """
+            no preamble, just the email content.
             ### JOB DESCRIPTION:
             {job_description}
             
-            ### INSTRUCTION:
-            You are Keerthi, a passionate software engineer who builds smart, tailored solutions across AI, full-stack, and automation.
-            Your goal is to write a cold email expressing interest in the job above, showcasing your ability to deliver impact using
-            relevant projects from your resume.
-
-            Add the most relevant ones from the following portfolio link: {link_list}
-
-            Keep it direct, professional, and focused on how you can help them.  
-            No preamble.
-
-            ### EMAIL (NO PREAMBLE):
+            ### RELEVANT PORTFOLIO LINKS:
+            {link_list}
+            
+            ### STRICT INSTRUCTIONS:
+            Write a cold email for the job above following these rules:
+            
+            1. Start directly with the email content (no introductory text)
+            2. Format must be:
+            Subject: [Your Subject Here]
+            
+            [Email Body Here]
+            
+            [Your Signature]
+            
+            3. Must include:
+            - Hyperlinked portfolio projects: [project name](URL)
+            - Specific skills matching job requirements
+            - Professional but enthusiastic tone
+            
+            4. DO NOT include:
+            - Any text before "Subject:"
+            - Markers like "--- BEGIN EMAIL ---"
+            - Explanatory text about the email
             """
         )
 
