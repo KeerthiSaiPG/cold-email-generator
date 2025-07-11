@@ -69,7 +69,7 @@ class Chain:
             Your goal is to write a cold email expressing interest in the job above, showcasing your ability to deliver impact using
             relevant projects from your resume.
 
-            Add the most relevant (only one) link from the following links: {link_list}
+            Add the most relevant ones from the following portfolio link: {link_list}
 
             Keep it direct, professional, and focused on how you can help them.  
             No preamble.
